@@ -1,0 +1,32 @@
+{
+  "name": "nodejs_base_code",
+  "version": "1.0.0",
+  "description": "Node.js Base Code",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "custom-build": "node build.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "celebrate": "^13.0.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "joi": "^17.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.6.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
+  },
+  "keywords": [
+    "node.js",
+    "base-code"
+  ],
+  "author": "Navalogithan.S",
+  "license": "ISC"
+}
