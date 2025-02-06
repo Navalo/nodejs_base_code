@@ -1,20 +1,23 @@
-const PORT = process.env.PORT || 8080
+const cors = require('cors');
+const express = require('express');
+const { errors } = require('celebrate');
+const api = require('./api');
+const responseHandler = require('./middleware/responseHandler');
 
-async function launch () {
-  const { errors } = require('celebrate')
-  const express = require('express')
-  const cors = require('cors')
-  const app = express()
-  const api = require('./api')
+const PORT = process.env.PORT || 8080;
 
-  app.use(cors({ origin: true }))
-  app.use(express.json())
-  app.use('/api', api)
-  app.use(errors())
+async function launch() {
+  const app = express();
+
+  app.use(cors({ origin: true }));
+  app.use(express.json());
+  app.use(responseHandler);
+  app.use('/api', api);
+  app.use(errors());
 
   app.listen(PORT, () => {
-    console.log(`Server is listening to port ${PORT}`)
-  })
+    console.log(`Server is listening to port ${PORT}`);
+  });
 }
 
-launch()
+launch();
